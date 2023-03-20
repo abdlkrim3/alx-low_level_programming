@@ -10,6 +10,8 @@ int main(void)
 {
 char quote[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 write(2, quote, sizeof(quote) - 1);
-// Return failure status (nonzero)
+/*
+ * Return failure status (nonzero)
+ */
 return (1);
 }
