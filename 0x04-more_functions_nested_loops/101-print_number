@@ -1,0 +1,40 @@
+#include "main.h"
+
+/**
+ * print_number - prints an integer
+ *
+ * @n: the integer to print
+ */
+void print_number(int n)
+{
+    int digits, power, digit, is_negative;
+
+    digits = 1;
+    power = 1;
+    is_negative = n < 0;
+
+    /* Count the number of digits */
+    while ((n / power) > 9 || (n / power) < -9)
+    {
+        digits++;
+        power *= 10;
+    }
+
+    /* Print the sign if negative */
+    if (is_negative)
+    {
+        _putchar('-');
+    }
+
+    /* Print the digits */
+    while (power > 0)
+    {
+        digit = (n / power) % 10;
+        if (digit < 0)
+        {
+            digit = -digit;
+        }
+        _putchar(digit + '0');
+        power /= 10;
+    }
+}
